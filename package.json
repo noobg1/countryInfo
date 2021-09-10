@@ -1,0 +1,17 @@
+{
+  "name": "countryinfo",
+  "version": "1.0.0",
+  "description": "A service to fetch the country info by name",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jeevan.var@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.21.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  }
+}
