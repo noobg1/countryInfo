@@ -5,7 +5,7 @@ const server = require('fastify')({
 const swagger = require('fastify-swagger');
 const typeDefs = require('./coreDomains/countryInfo/typeDefs');
 const { resolvers } = require('./coreDomains/countryInfo/resolver');
-
+const errorHandler = require('./errorHandler');
 const enableDocs = process.env.NODE_ENV === 'prod' ? false : true;
 
 // Swagger register
@@ -24,6 +24,7 @@ async function startApolloServer(typeDefs, resolvers) {
     resolvers,
     introspection: enableDocs,
     playground: enableDocs,
+    formatError: errorHandler.graphqlResponseErrorHandler
   });
   await graphqlServer.start();
   server.register(graphqlServer.createHandler());
