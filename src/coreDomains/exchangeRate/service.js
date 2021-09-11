@@ -4,7 +4,7 @@ const getDefaultExchangeRate = async () => {
   return await repository.getDefaultExchangeRate();
 };
 
-const getExChangeRateByCountry = async (baseCurrency = 'SEK', countriesId = []) => {
+const getExChangeRateByCountry = async (countriesId = [], baseCurrency = 'SEK') => {
   const defaultExchangeRate = await getDefaultExchangeRate();
 
   const exchangeRateByBaseCurrency = countriesId.map((currency) => {

@@ -7,7 +7,7 @@ const getCountryByName = async (name) => {
 };
 
 const getExChangeRateBySEK = async (currencyCodes) => {
-  const result = await exchangeRate.getExChangeRateByCountry('SEK', currencyCodes);
+  const result = await exchangeRate.getExChangeRateByCountry(currencyCodes);
   return result;
 };
 
