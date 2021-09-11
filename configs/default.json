@@ -3,6 +3,9 @@
   "external": {
     "countries": {
       "baseUrl": "https://restcountries.eu/rest/v2"
+    },
+    "exchangeRate": {
+      "baseUrl": "http://data.fixer.io/api/latest"
     }
   }
 }

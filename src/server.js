@@ -3,8 +3,8 @@ const server = require('fastify')({
   logger: true
 });
 const swagger = require('fastify-swagger');
-const typeDefs = require('./coreDomains/exchangeRate/typeDefs');
-const { resolvers } = require('./coreDomains/exchangeRate/resolver');
+const typeDefs = require('./coreDomains/countryInfo/typeDefs');
+const { resolvers } = require('./coreDomains/countryInfo/resolver');
 
 const enableDocs = process.env.NODE_ENV === 'prod' ? false : true;
 
