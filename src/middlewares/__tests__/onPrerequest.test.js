@@ -25,7 +25,7 @@ describe('onPreRequest.js', () => {
       // GIVEN
       const request = {
         headers: {
-          authorization: 'eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJkYXRhIjp7InJvbGVzIjpbIkFETUlOIl0sInR5cGUiOiJyZWZyZXNoX3Rva2VuIn0sImlhdCI6MTYzMTM2OTgwMiwiZXhwIjoxNjMzOTYxODAyfQ.'
+          authorization: 'Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJkYXRhIjp7InJvbGVzIjpbIkFETUlOIl0sInR5cGUiOiJyZWZyZXNoX3Rva2VuIn0sImlhdCI6MTYzMTM2OTgwMiwiZXhwIjoxNjMzOTYxODAyfQ.'
         },
         url: '/test'
       };

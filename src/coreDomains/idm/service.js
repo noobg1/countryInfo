@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 
-const EXPIRY_TOKEN = '15s';
+const EXPIRY_TOKEN = '15m';
+const TOKEN_SHARED_SECRET = process.env.TOKEN_SHARED_SECRET;
 const TOKEN_TYPE = {
   ACCESS_TOKEN: 'access_token',
   REFRESH_TOKEN: 'refresh_token'
@@ -30,7 +31,7 @@ const getAccessToken = async (refreshToken) => {
     };
 
     // sign and generate token
-    const token = jwt.sign(payload, process.env.TOKEN_SHARED_SECRET, options);
+    const token = jwt.sign(payload, TOKEN_SHARED_SECRET, options);
     return token;
   }
 

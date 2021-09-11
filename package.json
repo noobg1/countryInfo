@@ -4,9 +4,10 @@
   "description": "A service to fetch the country info by name",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon --inspect  src/server.js",
-    "test:watch": "nyc mocha 'src/**/*.test.js' -w"
+    "start": "node src/server.js",
+    "test:watch": "nyc mocha 'src/**/*.test.js' -w",
+    "test": "nyc mocha 'src/**/*.test.js'"
   },
   "author": "jeevan.var@gmail.com",
   "license": "ISC",
@@ -15,6 +16,7 @@
     "apollo-server-fastify": "^3.3.0",
     "axios": "^0.21.4",
     "fastify": "^3.21.0",
+    "fastify-rate-limit": "^5.6.2",
     "fastify-swagger": "^4.11.0",
     "graphql": "^15.5.3",
     "jsonwebtoken": "^8.5.1",

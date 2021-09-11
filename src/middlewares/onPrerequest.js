@@ -16,9 +16,10 @@ const onPreRequest = async (request, reply) => {
   ) return;
 
   const authHeader = request.headers?.authorization;
+  const token = authHeader?.split(' ')[1];
 
   try {
-    await authService.verifyToken(authHeader);
+    await authService.verifyToken(token);
     return;
   } catch (error) {
     reply.code(401);
