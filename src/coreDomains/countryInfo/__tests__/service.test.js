@@ -1,27 +1,27 @@
 const { expect } = require('chai');
-const service = require('../../exchangeRate/service');
+const service = require('../service');
 const sinon = require('sinon');
-const repository = require('../../exchangeRate/repository');
+const exchangeRateService = require('../../exchangeRate/service');
 
-describe('repository.getDefaultExchangeRate', () => {
+describe('service.getExChangeRateByCountry', () => {
   it('should return exchange rates', async () => {
     // GIVEN
-    const mockData = {
-      MYR: 4.887155,
-      MZN: 75.348295,
-      SEK: 10.20159,
-      INR: 86.868886
-    };
-    const repoMock = sinon.stub(repository, 'getDefaultExchangeRate').resolves(mockData);
+    const mockData = [
+      {
+        "code": "INR",
+        "rate": 8.515223399314499
+      }
+    ];
+    const repoMock = sinon.stub(exchangeRateService, 'getExChangeRateByCountry').resolves(mockData);
 
     // WHEN
-    const result = await service.getExChangeRateByCountry(['INR']);
+    const result = await service.getExChangeRateBySEK(['INR']);
 
     // THEN
     expect(result).deep.equal([
       {
         "code": "INR",
-        "rate": 8.515230076880174
+        "rate": 8.515223399314499
       }
     ]);
     repoMock.restore();
@@ -29,16 +29,16 @@ describe('repository.getDefaultExchangeRate', () => {
 
   it('should return NAN for those countries which does not exist', async () => {
     // GIVEN
-    const mockData = {
-      MYR: 4.887155,
-      MZN: 75.348295,
-      SEK: 10.20159,
-      INR: 86.868886
-    };
-    const repoMock = sinon.stub(repository, 'getDefaultExchangeRate').resolves(mockData);
+    const mockData = [
+      {
+        "code": "XXX",
+        "rate": NaN
+      }
+    ];
+    const repoMock = sinon.stub(exchangeRateService, 'getExChangeRateByCountry').resolves(mockData);
 
     // WHEN
-    const result = await service.getExChangeRateByCountry(['XXX']);
+    const result = await service.getExChangeRateBySEK(['XXX']);
 
     // THEN
     expect(result).deep.equal([
@@ -52,12 +52,12 @@ describe('repository.getDefaultExchangeRate', () => {
 
   it('should throw and propagate error when repo throws error', async () => {
     // GIVEN
-    const repoMock = sinon.stub(repository, 'getDefaultExchangeRate').throws(new Error('something went wrong'));
+    const repoMock = sinon.stub(exchangeRateService, 'getExChangeRateByCountry').throws(new Error('something went wrong'));
 
     // WHEN
     let expected;
     try {
-      await service.getExChangeRateByCountry(['XXX']);
+      await service.getExChangeRateBySEK(['XXX']);
     } catch (error) {
       expected = error;
     }

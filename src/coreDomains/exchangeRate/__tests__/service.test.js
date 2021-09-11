@@ -3,7 +3,7 @@ const service = require('../service');
 const sinon = require('sinon');
 const repository = require('../repository');
 
-describe('repository.getDefaultExchangeRate', () => {
+describe('service.getExChangeRateByCountry', () => {
   it('should return exchange rates', async () => {
     // GIVEN
     const mockData = {
