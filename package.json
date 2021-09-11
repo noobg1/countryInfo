@@ -4,14 +4,27 @@
   "description": "A service to fetch the country info by name",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon --inspect  src/server.js",
+    "test:watch": "nyc mocha 'src/**/*.test.js' -w"
   },
   "author": "jeevan.var@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^3.21.0"
+    "apollo-server-core": "^3.3.0",
+    "apollo-server-fastify": "^3.3.0",
+    "axios": "^0.21.4",
+    "fastify": "^3.21.0",
+    "fastify-swagger": "^4.11.0",
+    "graphql": "^15.5.3",
+    "lodash": "^4.17.21",
+    "nconf": "^0.11.3"
   },
   "devDependencies": {
-    "eslint": "^7.32.0"
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "mocha": "^9.1.1",
+    "nyc": "^15.1.0",
+    "sinon": "^11.1.2"
   }
 }

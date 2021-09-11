@@ -1,0 +1,8 @@
+{
+  "serviceName": "core",
+  "external": {
+    "countries": {
+      "baseUrl": "https://restcountries.eu/rest/v2"
+    }
+  }
+}
