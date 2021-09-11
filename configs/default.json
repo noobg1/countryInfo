@@ -1,5 +1,6 @@
 {
   "serviceName": "core",
+  "port": 3000,
   "external": {
     "countries": {
       "baseUrl": "https://restcountries.eu/rest/v2"

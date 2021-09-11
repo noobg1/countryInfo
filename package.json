@@ -17,6 +17,7 @@
     "fastify": "^3.21.0",
     "fastify-swagger": "^4.11.0",
     "graphql": "^15.5.3",
+    "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "nconf": "^0.11.3"
   },

@@ -52,12 +52,6 @@ describe('service.getExChangeRateByCountry', () => {
 
   it('should throw and propagate error when repo throws error', async () => {
     // GIVEN
-    const mockData = {
-      MYR: 4.887155,
-      MZN: 75.348295,
-      SEK: 10.20159,
-      INR: 86.868886
-    };
     const repoMock = sinon.stub(repository, 'getDefaultExchangeRate').throws(new Error('something went wrong'));
 
     // WHEN
