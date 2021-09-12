@@ -7,6 +7,7 @@ const Country = `
     name: String
     exchangeRate: [ExchangeRate]
     currencies: [Currencies]
+    population: String
   }
 
   type Currencies {
